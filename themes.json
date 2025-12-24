@@ -1,1 +1,16 @@
-
+{
+  "themes": [
+    {
+      "id": "retro",
+      "name": "Retro Green",
+      "background": "themes/retro/bg.jpg",
+      "premium": false
+    },
+    {
+      "id": "neon",
+      "name": "Neon Neon",
+      "background": "themes/neon/bg.jpg",
+      "premium": true
+    }
+  ]
+}
