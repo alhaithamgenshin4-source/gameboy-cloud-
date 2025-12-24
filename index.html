@@ -1,1 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>CloudBoy Emulator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<div id="app">
+  <header>
+    <img src="assets/logo.png">
+    <button onclick="openStore()">🎨 Store</button>
+  </header>
+
+  <div id="emulator"></div>
+
+  <div class="controls">
+    <div class="dpad"></div>
+    <div class="ab">
+      <button>A</button>
+      <button>B</button>
+    </div>
+  </div>
+</div>
+
+<div id="store" class="hidden"></div>
+
+<script src="emulator/emulator.js"></script>
+<script src="app.js"></script>
+<script src="admin.js"></script>
+
+<script>
+  window.EJS_player = "#emulator";
+  window.EJS_core = "gb";
+  window.EJS_gameUrl = "roms/demo.gb";
+  window.EJS_pathtodata = "emulator/";
+</script>
+
+</body>
+                                     </html>
