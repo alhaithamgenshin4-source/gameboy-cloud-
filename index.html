@@ -3,39 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <title>CloudBoy Emulator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div id="app">
+
+  <!-- HEADER -->
   <header>
-    <img src="assets/logo.png">
-    <button onclick="openStore()">🎨 Store</button>
+    <img src="assets/logo.png" id="logo" alt="CloudBoy Logo">
+    <div class="top-buttons">
+      <button onclick="openStore()">🎨 Store</button>
+      <button onclick="toggleFast()">⚡</button>
+    </div>
   </header>
 
+  <!-- EMULADOR -->
   <div id="emulator"></div>
 
+  <!-- CONTROLES -->
   <div class="controls">
-    <div class="dpad"></div>
-    <div class="ab">
-      <button>A</button>
-      <button>B</button>
+
+    <!-- D-PAD -->
+    <div class="dpad">
+      <div class="up"></div>
+      <div class="down"></div>
+      <div class="left"></div>
+      <div class="right"></div>
     </div>
+
+    <!-- BOTÕES A / B -->
+    <div class="ab">
+      <button id="btnA">A</button>
+      <button id="btnB">B</button>
+    </div>
+
   </div>
+
+  <!-- CONTROLES EXTRA -->
+  <div class="extra-controls">
+    <button onclick="saveState()">💾 Save</button>
+    <button onclick="loadState()">▶ Load</button>
+    <button onclick="loadGame('gb')">GB</button>
+    <button onclick="loadGame('gba')">GBA</button>
+  </div>
+
 </div>
 
+<!-- STORE -->
 <div id="store" class="hidden"></div>
 
+<!-- SCRIPTS -->
 <script src="emulator/emulator.js"></script>
-<script src="app.js"></script>
-<script src="admin.js"></script>
 
 <script>
+  /* EmulatorJS Config */
   window.EJS_player = "#emulator";
-  window.EJS_core = "gb";
+  window.EJS_core = "gb";              // gb ou gba
   window.EJS_gameUrl = "roms/demo.gb";
   window.EJS_pathtodata = "emulator/";
+  window.EJS_startOnLoaded = true;
 </script>
 
+<script src="app.js"></script>
+<script src="controls.js"></script>
+<script src="admin.js"></script>
+
 </body>
-                                     </html>
+  </html>
